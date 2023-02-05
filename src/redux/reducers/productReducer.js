@@ -7,9 +7,9 @@ const initialState = {
 const productReducer = (state = initialState, action) => {
 
     const selectedProduct = state.cart.find((product) => product._id === action.payload._id)
-    
+
     console.log(selectedProduct)
-    
+
     switch (action.type) {
         case ADD_TO_CART:
             if (selectedProduct) {
@@ -17,7 +17,7 @@ const productReducer = (state = initialState, action) => {
             }
             return {
                 ...state,
-                cart: [...state.cart, { ...action.payload, quantity: 1 }],
+                cart: [ ...state.cart, { ...action.payload, quantity: 1 }],
             };
         case REMOVE_FROM_CART:
             return {
