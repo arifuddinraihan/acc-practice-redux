@@ -12,9 +12,12 @@ const ProductCard = ({ product }) => {
   // console.log(pathname)
   return (
     <div
-      className='shadow-lg rounded-3xl border  p-3 flex flex-col text-indigo-900'
+      className='relative shadow-lg rounded-3xl border  p-3 flex flex-col text-indigo-900'
       key={product._id}
     >
+      {
+        pathname.includes('cart') && <div className="grid place-items-center bg-indigo-400 text-white top-1 right-1 px-3 py-1 rounded-full absolute">{product.quantity}</div>
+      }
       <div className='h-52 w-52 mx-auto'>
         <img src={product.image} alt={product.model} />
       </div>
